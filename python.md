@@ -1,6 +1,6 @@
-# Python Reference
+# Python Stylesheet
 Python is an interpreted high-level programming language with dynamic and strong typing disciplines. 
-## Lexical Structure
+## Layout
 ### Whitespace and indentation
 Use 4 spaces(U+0020) every indentation level. 
 
@@ -38,11 +38,11 @@ Imports also should be on separate lines:
 import os
 import sys
 
-# However, it is ok to import several 
+# However, it is OK to import several 
 # methods from a library on single line.
 from library import method1, method2
 ```
-For line break,
+#### For line break,
 
 Surround top-level function and class definitions with two blank lines. 
 Surround method definitions single blank line.
@@ -120,24 +120,24 @@ class SampleClassName(object):
     """
 
 ```
-### Naming Conventions
-* Package and module names
+## Naming Conventions
+#### Package and module names
 
 ```python
 # Lower case words with underscores (snake case)
 import package_name
 import module_name
 ```
-* Class names
+#### Class names
 
 ```python
-# Upper case words combined (camel case)
+# Upper case words combined (pascal case)
 class ClassName(object):
     
     __init__(self):
     pass
 ```
-* Exception names
+#### Exception names
 
 ```python
 # Basically same as class names
@@ -145,12 +145,12 @@ class ExceptionName(Exception):
 
     pass
 ```
-* Global variable names
+#### Global variable names
 
 ```python
 global global_var_name
 ```
-* Function and variable names
+#### Function and variable names
 
 ```python
 variable_name = 123
@@ -158,7 +158,7 @@ variable_name = 123
 def function_name():
     pass
 ```
-* Function and method arguments
+#### Function and method arguments
 
 ```python
 class ClassName:
@@ -175,19 +175,19 @@ class ClassName:
         pass
         
 ```
-* Method names and instance variables
+#### Method names and instance variables
 
 ```python
 def function_name(method_parameter_name):
     pass
 ```
-* Constants
+#### Constants
 
 ```python
 # All capital letters with underscores
 CONSTANT_NAME = 123
 ```
-* Inherent methods
+#### Inherent methods
 
 ```python
 # Includes __new__, __init__, __str__ ...
@@ -200,10 +200,80 @@ class ClassName(object):
         pass
         
 ```
-## Expressions
 ## Statements
+#### Conditional statements
+
+```python
+if some_conditions:     
+    # some_conditions must return a boolean value
+    pass
+else:
+    pass   
+```
+
+`if` statement can have multiple `elif` and `else` is optional.
+
+```python
+x = int(input("Please enter an integer: "))
+if x > 0:
+    print("Your input is positive")
+elif x < -1:
+    print("Your input is less than -1")
+elif x < 0 and x >= -1:
+    print("Your input is less than negative and larger than -1")
+else:
+    print("Your input is 0")
+```
+#### Loop statements
+
+##### `for` statements:
+```python
+numbers = [1, 2, 3, 4, 5]
+for number in numbers:
+    print(number)
+    
+# Output is   
+"""
+1
+2
+3
+4
+5
+"""
+```
+##### `while` statements:
+```python
+while some_conditions:
+    # some_conditions must return a boolean value
+    do_something()
+```
+In Python, there is no `do-while` loop, but you can implement it like this:
+
+```python
+while True:
+    do_something()
+    if fail_condition:
+        break
+```
+#### Exception handling statements
+```python
+try:
+    do_something()
+except IOError:
+    print("IOError occurs")
+else:
+    print("No IOError occurs")
+finally:
+    do_something_finally()
+    # THIS WOULD ALWAYS BE EXECUTED
+```
+Raise an exception:
+
+```python
+raise ExceptionName(Error)
+```
 ## Declarations
-* Variables
+#### Variables
 
 ```python
 integer = 1
@@ -216,7 +286,7 @@ global global_val   # a global variable
 global_val = 123
 ```
 
-* Methods and functions
+#### Methods and functions
 
 ```python
 class ClassName:
@@ -234,14 +304,14 @@ sample_class.method()
 
 function()
 ```
-* Constants
+#### Constants
 
 ```python
 CONSTANT_STRING = 'abc'
 CONSTANT_INT = 123
 ```
 
-* Classes
+#### Classes
 
 ```python
 class ClassName(object):
@@ -257,7 +327,7 @@ class ClassName(object):
         
 ```
 ## Patterns
-* Wildcard pattern
+#### Wildcard pattern
 
 ```python
 for _ in range(5):
@@ -265,7 +335,7 @@ for _ in range(5):
 ```
 Underscore (`_`) variable means throwaway in Python.
 
-* String pattern
+#### String pattern
 
 ```python
 str1 = '%s, %d!' % ('Hello', 12345)
@@ -289,7 +359,7 @@ This is the second line.
 ```
 Though they produce the same outputs, the first one is better in this case. 
 
-* List and Dictionary pattern
+#### List and Dictionary pattern
 
 ```python
 empty_list = []
@@ -315,7 +385,8 @@ example_large = {
                 
 }
 ```
-* Regular expression
+#### Regular expression
+
 
 ## References
 1. [PEP 8](https://www.python.org/dev/peps/pep-0008), Style Guide for Python Code, van Rossum
