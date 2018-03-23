@@ -131,7 +131,7 @@ import module_name
 #### Class names
 
 ```python
-# Upper case words combined (pascal case)
+# Upper case words combined (camel case)
 class ClassName(object):
     
     __init__(self):
