@@ -386,11 +386,16 @@ example_large = {
 }
 ```
 #### Regular expression
-
+* `.` matches any character except a newline.
+* `^` matches the start of the string.
+* `$` matches the end of the string.
+* `*` matches 0 or more repetitions of the preceding regular expression.
+* `+` matches 1 or more repetitions of the preceding regular expression.
+* `?` matches 0 or 1 repetitions of the preceding regular expression.
 
 ## References
 1. [PEP 8](https://www.python.org/dev/peps/pep-0008), Style Guide for Python Code, van Rossum
 2. [Naming convention (programming) - Wikipedia](https://en.wikipedia.org/wiki/Naming_convention_(programming))
 3. [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html), Amit Patel, et al.
-
+4. [Regular expression operations](https://docs.python.org/3/library/re.html) - The Python Standard Library
 
